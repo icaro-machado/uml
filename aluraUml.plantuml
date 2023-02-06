@@ -1,0 +1,35 @@
+@startuml
+
+    !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+    HIDE_STEREOTYPE()
+
+    LAYOUT_TOP_DOWN()    
+    LAYOUT_WITH_LEGEND()
+
+    Person(Leiloeiro, "Leiloeiro")
+    Person(Usuario, "Usuário")
+
+    Container(Cria, "Criar um leilão")
+    Container(Finaliza, "Finalizar um leilão")
+    Container(Ganha, "Ganhar um leilão")
+    Container(Lance, "Dar um lance")
+    Container(Paga, "Pagar um leilão")
+
+    System_Boundary(Pagamento, "Pagamento") {
+        System_Ext(PagarCC, "Pagar com cartão de crédito")
+        System_Ext(PagarBol, "Pagar com Boleto")
+    }
+
+    Rel(Leiloeiro, Finaliza, "")
+    Rel(Leiloeiro, Cria, "")
+
+    Rel(Usuario, Ganha, "")
+    Rel(Usuario, Lance, "")
+    Rel(Usuario, Paga, "")
+
+    Rel(Lance, Cria, "")
+
+    Rel(Paga, PagarCC, "")
+    Rel(Paga, PagarBol, "")
+
+@enduml

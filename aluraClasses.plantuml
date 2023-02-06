@@ -1,0 +1,33 @@
+@startuml TutorialYoutube
+
+    class Aluno {
+        -String Nome
+        -String Email
+        
+        +Integer ContaPontos()
+    }
+
+    class Professor {
+        -String Nome
+        -String Email
+    }
+
+    class Contrato {
+        -Calendar DataInicio
+        -Calendar DataFim
+        -String Curso
+        +Bool estaValidado()
+    }
+
+    class PJ extends Contrato {
+        -String CNPJ
+    }
+
+    class PF extends Contrato {
+        -String CPF
+    }
+
+    Contrato --> Aluno
+    Contrato --> Professor
+
+@enduml

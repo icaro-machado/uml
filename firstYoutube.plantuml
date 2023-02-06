@@ -1,0 +1,32 @@
+@startuml TutorialYoutube
+
+    class Aluno {
+        +String Nome
+        +String Endereco
+        +Integer Matricula
+
+        +Integer obterMatricula()
+    }
+
+    class Turma {
+        +String Codigo
+        +String Sala
+        +String Horario
+        +String NomeDisciplina
+        +String RegistroProfessor
+        +List Alunos
+        +List exibirAlunos()
+        +List exibirDadosTurma()
+    }
+
+    class Professor {
+        +String Nome
+        +String Titulo
+        +String Registro
+        +String obterRegistro()
+    }
+
+    Aluno --> Turma : pertence à
+    Professor --> Turma : pertence à
+
+@enduml
