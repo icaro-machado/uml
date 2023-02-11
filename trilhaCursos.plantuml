@@ -1,0 +1,24 @@
+@startuml
+
+    class Trilha {
+    }
+
+    class Curso {
+    }
+
+    class Capitulo {
+    }
+
+    class Exercicio {
+    }
+
+    class Aluno {
+    }
+
+    Trilha -- Curso
+    Curso -- Capitulo
+    Capitulo -- Exercicio
+    Aluno -- Curso : Matrícula
+    Aluno -- Exercicio : Resolve
+
+@enduml

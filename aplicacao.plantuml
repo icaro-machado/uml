@@ -1,0 +1,14 @@
+@startuml
+
+    !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+    LAYOUT_LEFT_RIGHT()    
+
+    System(App, "Aplicação Web")
+    System(Batchjobs, "Batch Jobs")
+    System(MySQL, "MySQL")
+
+    Rel(App, Batchjobs, "Envio de arquivos")
+    Rel(Batchjobs, MySQL, "Tratamento de arquivos")
+    Rel(App, MySQL, "Consultas")
+
+@enduml
